@@ -1,0 +1,25 @@
+[gd_scene format=2]
+
+[node name="Tank" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+
+[node name="Body" type="Sprite" parent="." index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+[node name="Turret" type="Sprite" parent="." index="2"]
+
+[node name="Muzzle" type="Position2D" parent="Turret" index="0"]
+
+[node name="GunTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+
