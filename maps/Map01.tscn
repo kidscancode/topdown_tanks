@@ -63,4 +63,6 @@ lookahead = 4.0
 
 detect_radius = 400
 
+[node name="Node" type="Node" parent="." index="3"]
+
 
