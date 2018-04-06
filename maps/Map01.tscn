@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://terrain/terrain_tiles.tres" type="TileSet" id=2]
@@ -10,6 +10,13 @@
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1601.45, 1012.35, -3.51986, -22.0791, 2.87988, 64.9573, 1600.03, 1781.92, -60.7975, -3.19987, 110.075, 0.639975, 1661.2, 1860.16, -83.5872, 4.75823, 69.7571, 0, 2658.03, 1860.19, -3.12715, 57.6289, -4.72708, -63.6338, 2755.59, 1786.34, 0, 0, 49.0723, -1.42539, 2823.39, 1727.87, -66.871, 0.905931, 84.0485, 6.07352, 2935.77, 1727.87, 0, 0, -9.59961, -79.6767, 3011.16, 1662.43, 0, 0, 0.959961, -61.4375, 3009.74, 1025.15, 0, 0, -53.1178, -5.43978, 2941.54, 958.792, 0, 0, -64.3174, -3.51986, 1664.04, 961.137, 0, 0, 0, 0, 1601.45, 1012.35 )
+}
+
+[sub_resource type="Curve2D" id=2]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3556.63, 965.333, 0, 0, -105.92, 9.37348, 3103.63, 965.333, -0.937348, 30.9325, -3.74939, -73.1131, 3007.54, 886.892, 0, 0, 0, 0, 3007.54, -201.478, 0, 0, 0, 0, 4868.56, -195.595, 0, 0, 0, 0, 4846.98, 963.372, 0, 0, -47.8047, 0.937348, 3733.12, 965.333, -11.2482, -124.667, 0, -34.6819, 3648.8, 1067.31, 0, 0, -9.37348, 111.544, 3646.84, 1608.55, -84.3613, 1.8747, 150.913, -0.937348, 3758.61, 1732.09, 0, 0, 0, 0, 4841.1, 1728.17, 0, 0, 0, 0, 4821.49, 963.372, 0, 0, 0, 0, 3556.63, 965.333 )
 }
 
 [node name="Map01" type="Node2D" index="0"]
@@ -45,6 +52,7 @@ position = Vector2( 1941.57, 1312.05 )
 
 [node name="Path2D" type="Path2D" parent="Paths" index="0"]
 
+editor/display_folded = true
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D" index="0"]
@@ -63,6 +71,24 @@ lookahead = 4.0
 
 detect_radius = 400
 
-[node name="Node" type="Node" parent="." index="3"]
+[node name="Path2D2" type="Path2D" parent="Paths" index="1"]
+
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D2" index="0"]
+
+position = Vector2( 3556.63, 965.333 )
+rotation = 3.14159
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="EnemyTank" parent="Paths/Path2D2/PathFollow2D" index="0" instance=ExtResource( 4 )]
+
+[connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
 
 

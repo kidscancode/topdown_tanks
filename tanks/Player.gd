@@ -14,3 +14,5 @@ func control(delta):
 	if Input.is_action_pressed('back'):
 		velocity += Vector2(-speed, 0).rotated(rotation)
 		velocity /= 2.0
+	if Input.is_action_just_pressed('click'):
+		shoot()

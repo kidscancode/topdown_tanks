@@ -16,10 +16,11 @@ radius = 350.571
 
 [node name="EnemyTank" instance=ExtResource( 1 )]
 
+collision_layer = 4
+collision_mask = 3
 script = ExtResource( 2 )
-Bullet = null
+_sections_unfolded = [ "Collision", "collision" ]
 speed = 150
-rotation_speed = null
 gun_cooldown = 0.5
 health = 100
 turret_speed = 1.0
@@ -52,8 +53,10 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRadius" index="0"]
 

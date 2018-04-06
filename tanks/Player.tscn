@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://tanks/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tanks/Player.gd" type="Script" id=2]
-[ext_resource path="res://assets/onlyObjects_retina_rotated.png" type="Texture" id=3]
+[ext_resource path="res://bullets/PlayerBullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/onlyObjects_retina_rotated.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -12,8 +13,11 @@ extents = Vector2( 40.0229, 37.3374 )
 [node name="Player" instance=ExtResource( 1 )]
 
 position = Vector2( 741.177, 459.959 )
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 2 )
-Bullet = null
+_sections_unfolded = [ "Collision", "collision" ]
+Bullet = ExtResource( 3 )
 speed = 200
 rotation_speed = 1.0
 gun_cooldown = 0.4
@@ -21,7 +25,7 @@ health = 100
 
 [node name="Body" parent="." index="0"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 308, 262, 80, 83 )
 _sections_unfolded = [ "Region" ]
@@ -33,7 +37,7 @@ shape = SubResource( 1 )
 
 [node name="Turret" parent="." index="2"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 20, 0 )
 region_enabled = true
 region_rect = Rect2( 684, 14, 60, 24 )
@@ -41,7 +45,7 @@ _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="Muzzle" parent="Turret" index="0"]
 
-position = Vector2( 55, 0 )
+position = Vector2( 65, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="4"]

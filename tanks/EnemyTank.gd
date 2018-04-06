@@ -25,8 +25,7 @@ func _process(delta):
 		$Turret.global_rotation = current_dir.linear_interpolate(target_dir, turret_speed * delta).angle()
 
 func _on_DetectRadius_body_entered(body):
-	if body.name == "Player":
-		target = body
+	target = body
 
 func _on_DetectRadius_body_exited(body):
 	if body == target:
