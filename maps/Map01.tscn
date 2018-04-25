@@ -46,13 +46,12 @@ _sections_unfolded = [ "Cell", "Visibility" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 1941.57, 1312.05 )
+position = Vector2( 2313.83, 1366.39 )
 
 [node name="Paths" type="Node2D" parent="." index="2"]
 
 [node name="Path2D" type="Path2D" parent="Paths" index="0"]
 
-editor/display_folded = true
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D" index="0"]
@@ -69,7 +68,9 @@ lookahead = 4.0
 
 [node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" index="0" instance=ExtResource( 4 )]
 
-detect_radius = 400
+max_speed = 175
+turret_speed = 3.0
+detect_radius = 500
 
 [node name="Path2D2" type="Path2D" parent="Paths" index="1"]
 
@@ -89,6 +90,15 @@ lookahead = 4.0
 
 [node name="EnemyTank" parent="Paths/Path2D2/PathFollow2D" index="0" instance=ExtResource( 4 )]
 
+max_speed = 150
+rotation_speed = 0.0
+turret_speed = 3.0
+detect_radius = 450
+
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
+
+[connection signal="shoot" from="Paths/Path2D/PathFollow2D/EnemyTank" to="." method="_on_Tank_shoot"]
+
+[connection signal="shoot" from="Paths/Path2D2/PathFollow2D/EnemyTank" to="." method="_on_Tank_shoot"]
 
 
