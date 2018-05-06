@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://bullets/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://effects/Explosion.tscn" type="PackedScene" id=2]
 
 [node name="Bullet" type="Area2D"]
 
@@ -30,8 +31,16 @@ wait_time = 1.0
 one_shot = true
 autostart = true
 
+[node name="Explosion" parent="." index="3" instance=ExtResource( 2 )]
+
+visible = false
+scale = Vector2( 0.5, 0.5 )
+_sections_unfolded = [ "Transform" ]
+
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_Lifetime_timeout"]
+
+[connection signal="animation_finished" from="Explosion" to="." method="_on_Explosion_animation_finished"]
 
 
