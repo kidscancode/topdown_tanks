@@ -13,7 +13,7 @@ Bullet = null
 max_speed = null
 rotation_speed = null
 gun_cooldown = null
-health = null
+max_health = null
 
 [node name="Body" type="Sprite" parent="." index="0"]
 

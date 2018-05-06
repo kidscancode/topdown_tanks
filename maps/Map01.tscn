@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://terrain/terrain_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://tanks/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tanks/EnemyTank.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -94,6 +95,10 @@ max_speed = 150
 rotation_speed = 0.0
 turret_speed = 3.0
 detect_radius = 450
+
+[node name="HUD" parent="." index="3" instance=ExtResource( 5 )]
+
+[connection signal="health_changed" from="Player" to="HUD" method="update_healthbar"]
 
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
 
