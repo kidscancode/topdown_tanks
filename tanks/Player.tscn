@@ -48,6 +48,15 @@ _sections_unfolded = [ "Offset", "Region", "Transform" ]
 position = Vector2( 65, 0 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Flash" parent="Turret" index="1"]
+
+position = Vector2( 55, 0 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 4 )
+offset = Vector2( 25, 0 )
+region_rect = Rect2( 584, 58, 57, 32 )
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
+
 [node name="Camera2D" type="Camera2D" parent="." index="4"]
 
 anchor_mode = 1

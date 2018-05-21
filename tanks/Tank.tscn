@@ -1,6 +1,57 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tanks/Tank.gd" type="Script" id=1]
+[ext_resource path="res://effects/Explosion.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "init"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Turret/Flash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "muzzle_flash"
+length = 0.15
+loop = false
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Turret/Flash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.12, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Turret/Flash:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.03, 0.08 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+}
 
 [node name="Tank" type="KinematicBody2D"]
 
@@ -23,6 +74,12 @@ max_health = null
 
 [node name="Muzzle" type="Position2D" parent="Turret" index="0"]
 
+[node name="Flash" type="Sprite" parent="Turret" index="1"]
+
+scale = Vector2( 0.833333, 0.833333 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Visibility" ]
+
 [node name="GunTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
@@ -30,6 +87,24 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+
+root_node = NodePath("..")
+autoplay = "init"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/init = SubResource( 1 )
+anims/muzzle_flash = SubResource( 2 )
+blend_times = [  ]
+
+[node name="Explosion" parent="." index="5" instance=ExtResource( 2 )]
+
+visible = false
+animation = "fire"
+
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
+
+[connection signal="animation_finished" from="Explosion" to="." method="_on_Explosion_animation_finished"]
 
 

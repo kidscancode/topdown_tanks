@@ -29,5 +29,6 @@ animations = [ {
 
 frames = SubResource( 1 )
 animation = "smoke"
+_sections_unfolded = [ "Transform" ]
 
 

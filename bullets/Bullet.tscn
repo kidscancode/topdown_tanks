@@ -35,7 +35,6 @@ autostart = true
 
 visible = false
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 
