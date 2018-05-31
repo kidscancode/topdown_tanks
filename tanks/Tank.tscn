@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://tanks/Tank.gd" type="Script" id=1]
-[ext_resource path="res://effects/Explosion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/onlyObjects_retina_rotated.png" type="Texture" id=2]
+[ext_resource path="res://effects/Explosion.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -68,17 +69,27 @@ max_health = null
 
 [node name="Body" type="Sprite" parent="." index="0"]
 
+texture = ExtResource( 2 )
+region_enabled = true
+_sections_unfolded = [ "Region" ]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 [node name="Turret" type="Sprite" parent="." index="2"]
+
+texture = ExtResource( 2 )
+region_enabled = true
+_sections_unfolded = [ "Region" ]
 
 [node name="Muzzle" type="Position2D" parent="Turret" index="0"]
 
 [node name="Flash" type="Sprite" parent="Turret" index="1"]
 
 scale = Vector2( 0.833333, 0.833333 )
+z_index = 1
+texture = ExtResource( 2 )
 region_enabled = true
-_sections_unfolded = [ "Region", "Transform", "Visibility" ]
+_sections_unfolded = [ "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="GunTimer" type="Timer" parent="." index="3"]
 
@@ -98,10 +109,9 @@ anims/init = SubResource( 1 )
 anims/muzzle_flash = SubResource( 2 )
 blend_times = [  ]
 
-[node name="Explosion" parent="." index="5" instance=ExtResource( 2 )]
+[node name="Explosion" parent="." index="5" instance=ExtResource( 3 )]
 
 visible = false
-animation = "fire"
 
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
 

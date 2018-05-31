@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://tanks/Tank.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tanks/EnemyTank.gd" type="Script" id=2]
+[ext_resource path="res://bullets/EnemyBulletSmall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/UnitDisplay.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 31.2692
+
+[node name="GunTurret" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+Bullet = ExtResource( 3 )
+gun_cooldown = 0.1
+max_health = 50
+turret_speed = 5.0
+detect_radius = 350
+
+[node name="Body" parent="." index="0"]
+
+region_rect = Rect2( 532, 130, 56, 56 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="Turret" parent="." index="2"]
+
+offset = Vector2( 18, 0 )
+region_rect = Rect2( 271, 60, 64, 28 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="Muzzle" parent="Turret" index="0"]
+
+position = Vector2( 55, 0 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Flash" parent="Turret" index="1"]
+
+show_behind_parent = true
+position = Vector2( 48, 0 )
+z_index = 0
+offset = Vector2( 25, 0 )
+region_rect = Rect2( 535, 18, 52, 16 )
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="DetectRadius" type="Area2D" parent="." index="6"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRadius" index="0"]
+
+[node name="UnitDisplay" parent="." index="7" instance=ExtResource( 4 )]
+
+[connection signal="health_changed" from="." to="UnitDisplay" method="update_healthbar"]
+
+[connection signal="body_entered" from="DetectRadius" to="." method="_on_DetectRadius_body_entered"]
+
+[connection signal="body_exited" from="DetectRadius" to="." method="_on_DetectRadius_body_exited"]
+
+

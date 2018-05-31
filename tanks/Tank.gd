@@ -50,6 +50,7 @@ func explode():
 	$Body.hide()
 	$Explosion.show()
 	$Explosion.play()
+	emit_signal('dead')
 
 func _on_GunTimer_timeout():
 	can_shoot = true

@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8.67727, 3.92789 )
+extents = Vector2( 9.43456, 3.81457 )
 
 [node name="EnemyBulletSmall" instance=ExtResource( 1 )]
 
@@ -15,19 +15,22 @@ collision_layer = 8
 collision_mask = 3
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision" ]
-speed = 800
+speed = 1000
 damage = 2
-lifetime = 0.25
 
 [node name="Sprite" parent="." index="0"]
 
 rotation = 3.14159
 texture = ExtResource( 3 )
 region_rect = Rect2( 573, 394, 20, 8 )
-_sections_unfolded = [ "Region", "Transform" ]
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
+
+[node name="Lifetime" parent="." index="2"]
+
+wait_time = 0.4
 
 

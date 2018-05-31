@@ -17,7 +17,6 @@ script = ExtResource( 2 )
 _sections_unfolded = [ "Collision" ]
 speed = 800
 damage = 10
-lifetime = 0.5
 
 [node name="Sprite" parent="." index="0"]
 
@@ -28,6 +27,11 @@ _sections_unfolded = [ "Region", "Transform" ]
 
 [node name="CollisionShape2D" parent="." index="1"]
 
+visible = false
 shape = SubResource( 1 )
+
+[node name="Lifetime" parent="." index="2"]
+
+wait_time = 0.5
 
 

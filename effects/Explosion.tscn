@@ -22,13 +22,13 @@ animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "smoke",
-"speed": 12.0
+"speed": 15.0
 } ]
 
 [node name="Explosion" type="AnimatedSprite"]
 
 frames = SubResource( 1 )
-animation = "smoke"
+animation = "fire"
 _sections_unfolded = [ "Transform" ]
 
 

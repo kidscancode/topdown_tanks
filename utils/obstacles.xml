@@ -1,0 +1,22 @@
+<TextureAtlas imagePath="onlyObjects_retina.png">
+	<SubTexture name="barrelBlack_side.png" x="652" y="532" width="40" height="56"/>
+	<SubTexture name="barrelBlack_top.png" x="645" y="220" width="48" height="48"/>
+	<SubTexture name="barrelGreen_side.png" x="652" y="476" width="40" height="56"/>
+	<SubTexture name="barrelGreen_top.png" x="597" y="220" width="48" height="48"/>
+	<SubTexture name="barrelRed_side.png" x="648" y="420" width="40" height="56"/>
+	<SubTexture name="barrelRed_top.png" x="645" y="172" width="48" height="48"/>
+	<SubTexture name="barrelRust_side.png" x="652" y="588" width="40" height="56"/>
+	<SubTexture name="barrelRust_top.png" x="597" y="172" width="48" height="48"/>
+	<SubTexture name="barricadeMetal.png" x="596" y="532" width="56" height="56"/>
+	<SubTexture name="barricadeWood.png" x="596" y="72" width="56" height="56"/>
+	<SubTexture name="fenceRed.png" x="243" y="336" width="96" height="32"/>
+	<SubTexture name="fenceYellow.png" x="128" y="216" width="104" height="32"/>
+	<SubTexture name="sandbagBeige.png" x="436" y="164" width="64" height="44"/>
+	<SubTexture name="sandbagBeige_open.png" x="348" y="518" width="84" height="55"/>
+	<SubTexture name="sandbagBrown.png" x="440" y="622" width="64" height="44"/>
+	<SubTexture name="sandbagBrown_open.png" x="248" y="596" width="84" height="55"/>
+	<SubTexture name="treeBrown_large.png" x="0" y="0" width="128" height="128"/>
+	<SubTexture name="treeBrown_small.png" x="592" y="694" width="72" height="72"/>
+	<SubTexture name="treeGreen_large.png" x="0" y="128" width="128" height="128"/>
+	<SubTexture name="treeGreen_small.png" x="520" y="694" width="72" height="72"/>
+</TextureAtlas>

@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tanks/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tanks/Player.gd" type="Script" id=2]
 [ext_resource path="res://bullets/PlayerBullet.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/onlyObjects_retina_rotated.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -25,10 +24,7 @@ max_health = 100
 
 [node name="Body" parent="." index="0"]
 
-texture = ExtResource( 4 )
-region_enabled = true
 region_rect = Rect2( 308, 262, 80, 83 )
-_sections_unfolded = [ "Region" ]
 
 [node name="CollisionShape2D" parent="." index="1"]
 
@@ -37,9 +33,7 @@ shape = SubResource( 1 )
 
 [node name="Turret" parent="." index="2"]
 
-texture = ExtResource( 4 )
 offset = Vector2( 20, 0 )
-region_enabled = true
 region_rect = Rect2( 684, 14, 60, 24 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
@@ -52,7 +46,6 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 55, 0 )
 scale = Vector2( 1, 1 )
-texture = ExtResource( 4 )
 offset = Vector2( 25, 0 )
 region_rect = Rect2( 584, 58, 57, 32 )
 _sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
