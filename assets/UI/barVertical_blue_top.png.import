@@ -7,10 +7,7 @@ path="res://.import/barVertical_blue_top.png-4f88a90f016205ba3fc64d94ebcade3c.st
 [deps]
 
 source_file="res://assets/UI/barVertical_blue_top.png"
-source_md5="243726cb401923718694675f1db01b1d"
-
 dest_files=[ "res://.import/barVertical_blue_top.png-4f88a90f016205ba3fc64d94ebcade3c.stex" ]
-dest_md5="6d015a43fd560d8b40bf7dc24e381f12"
 
 [params]
 

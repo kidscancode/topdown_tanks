@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/barHorizontal_white_left.png-41837b430522692e57383dcdc5d3d11b.stex"
+path="res://.import/spr_smoke_strip24.png-23e781f3ad65988d31191d1099951fb8.stex"
 
 [deps]
 
-source_file="res://assets/UI/barHorizontal_white_left.png"
-dest_files=[ "res://.import/barHorizontal_white_left.png-41837b430522692e57383dcdc5d3d11b.stex" ]
+source_file="res://assets/spr_smoke_strip24.png"
+dest_files=[ "res://.import/spr_smoke_strip24.png-23e781f3ad65988d31191d1099951fb8.stex" ]
 
 [params]
 

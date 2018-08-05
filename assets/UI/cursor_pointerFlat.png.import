@@ -7,10 +7,7 @@ path="res://.import/cursor_pointerFlat.png-15cedbae0c1887b9a352d75efd80b181.stex
 [deps]
 
 source_file="res://assets/UI/cursor_pointerFlat.png"
-source_md5="da95db8acc24daac16f7751da8d2cb20"
-
 dest_files=[ "res://.import/cursor_pointerFlat.png-15cedbae0c1887b9a352d75efd80b181.stex" ]
-dest_md5="49aca3fbba485123e59b96e115b5bbc9"
 
 [params]
 

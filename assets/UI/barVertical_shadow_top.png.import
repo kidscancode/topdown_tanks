@@ -7,10 +7,7 @@ path="res://.import/barVertical_shadow_top.png-abc41c897d98d3c23563dff22e159d4b.
 [deps]
 
 source_file="res://assets/UI/barVertical_shadow_top.png"
-source_md5="d8445c95cffc823a1f856f16a58f0ae9"
-
 dest_files=[ "res://.import/barVertical_shadow_top.png-abc41c897d98d3c23563dff22e159d4b.stex" ]
-dest_md5="8349c01c30397efad213d2e675f219c8"
 
 [params]
 

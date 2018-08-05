@@ -7,10 +7,7 @@ path="res://.import/dotYellow.png-398a3bb65d63fd9b347fd0ff2da08d07.stex"
 [deps]
 
 source_file="res://assets/UI/dotYellow.png"
-source_md5="520d14d8fe7a9e7b2d2c9c9d2793c82c"
-
 dest_files=[ "res://.import/dotYellow.png-398a3bb65d63fd9b347fd0ff2da08d07.stex" ]
-dest_md5="07066211fbe47fd70fa59b05815a0a84"
 
 [params]
 

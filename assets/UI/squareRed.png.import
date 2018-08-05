@@ -7,10 +7,7 @@ path="res://.import/squareRed.png-5d2f35c3724adb6903b49078d6e278ff.stex"
 [deps]
 
 source_file="res://assets/UI/squareRed.png"
-source_md5="a3ab5dcc10ca4be590783342524e162a"
-
 dest_files=[ "res://.import/squareRed.png-5d2f35c3724adb6903b49078d6e278ff.stex" ]
-dest_md5="643f4fa7f302147b3f7a2937e3b13b98"
 
 [params]
 

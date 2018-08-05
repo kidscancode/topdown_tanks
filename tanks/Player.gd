@@ -15,6 +15,6 @@ func control(delta):
 		velocity += Vector2(-max_speed, 0).rotated(rotation)
 		velocity /= 2.0
 	if Input.is_action_just_pressed('click'):
-		shoot()
+		shoot(gun_shots, gun_spread)
 	position.x = clamp(position.x, $Camera2D.limit_left, $Camera2D.limit_right)
 	position.y = clamp(position.y, $Camera2D.limit_top, $Camera2D.limit_bottom)

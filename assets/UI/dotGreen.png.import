@@ -7,10 +7,7 @@ path="res://.import/dotGreen.png-232826592b82baa3723943b2762b061e.stex"
 [deps]
 
 source_file="res://assets/UI/dotGreen.png"
-source_md5="614bcde06f310e53df50e70b47830909"
-
 dest_files=[ "res://.import/dotGreen.png-232826592b82baa3723943b2762b061e.stex" ]
-dest_md5="9705af3a7c15f9da58c8281ea0b04c9a"
 
 [params]
 

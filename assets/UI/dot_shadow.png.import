@@ -7,10 +7,7 @@ path="res://.import/dot_shadow.png-7ca7f4636df1f809d2a915dd610acbd7.stex"
 [deps]
 
 source_file="res://assets/UI/dot_shadow.png"
-source_md5="6e15f56c8c90f65393a19f057b6f1877"
-
 dest_files=[ "res://.import/dot_shadow.png-7ca7f4636df1f809d2a915dd610acbd7.stex" ]
-dest_md5="1c4beba298c2ada5f6ba6bc4d6f1e05c"
 
 [params]
 

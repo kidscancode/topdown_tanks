@@ -7,10 +7,7 @@ path="res://.import/cursor_hand.png-33da0b5de86d9fafa086f7d29e313a1e.stex"
 [deps]
 
 source_file="res://assets/UI/cursor_hand.png"
-source_md5="dea9ada7efa35e2d812aa0eddcc3bb8b"
-
 dest_files=[ "res://.import/cursor_hand.png-33da0b5de86d9fafa086f7d29e313a1e.stex" ]
-dest_md5="0c351761c92c337ae8400f236d2af139"
 
 [params]
 

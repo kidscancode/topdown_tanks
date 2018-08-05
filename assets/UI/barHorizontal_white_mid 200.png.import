@@ -7,10 +7,7 @@ path="res://.import/barHorizontal_white_mid 200.png-06698ed0eef52d8d1742e3a1d6d3
 [deps]
 
 source_file="res://assets/UI/barHorizontal_white_mid 200.png"
-source_md5="3a5bf1b29451c6e3a8c81163042dc858"
-
 dest_files=[ "res://.import/barHorizontal_white_mid 200.png-06698ed0eef52d8d1742e3a1d6d3cb8d.stex" ]
-dest_md5="980951051cbb9fea8f1649d9605b1e27"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/crossair_black.png-d15b76b5648057aa78c3e6e7a659dc95.stex"
 [deps]
 
 source_file="res://assets/UI/crossair_black.png"
-source_md5="05b401c646abcb99f54d8616a9ce5623"
-
 dest_files=[ "res://.import/crossair_black.png-d15b76b5648057aa78c3e6e7a659dc95.stex" ]
-dest_md5="ab8c1e42e148b424ae88e61dd81b22f3"
 
 [params]
 

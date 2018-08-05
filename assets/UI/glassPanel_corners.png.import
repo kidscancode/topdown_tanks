@@ -7,10 +7,7 @@ path="res://.import/glassPanel_corners.png-9487b90f37f19eb6855adb6f55d971e8.stex
 [deps]
 
 source_file="res://assets/UI/glassPanel_corners.png"
-source_md5="19c317f1a7abc99286b19eb90858c214"
-
 dest_files=[ "res://.import/glassPanel_corners.png-9487b90f37f19eb6855adb6f55d971e8.stex" ]
-dest_md5="2b795e19384bb6390fd99dae59f6a53e"
 
 [params]
 

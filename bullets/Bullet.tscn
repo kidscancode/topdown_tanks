@@ -15,6 +15,7 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 speed = null
 damage = null
+steer_force = 0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

@@ -10,6 +10,9 @@ export (float) var rotation_speed
 export (float) var gun_cooldown
 export (int) var max_health
 
+export (int) var gun_shots = 1
+export (float, 0, 1.5) var gun_spread = 0.2
+
 var velocity = Vector2()
 var can_shoot = true
 var alive = true
@@ -23,12 +26,17 @@ func _ready():
 func control(delta):
 	pass
 
-func shoot():
+func shoot(num, spread, target=null):
 	if can_shoot:
 		can_shoot = false
 		$GunTimer.start()
 		var dir = Vector2(1, 0).rotated($Turret.global_rotation)
-		emit_signal('shoot', Bullet, $Turret/Muzzle.global_position, dir)
+		if num > 1:
+			for i in range(num):
+				var a = -spread + i * (2*spread)/(num-1)
+				emit_signal('shoot', Bullet, $Turret/Muzzle.global_position, dir.rotated(a), target)
+		else:
+			emit_signal('shoot', Bullet, $Turret/Muzzle.global_position, dir, target)
 		$AnimationPlayer.play('muzzle_flash')
 
 func _physics_process(delta):

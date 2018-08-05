@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://terrain/terrain_tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://tanks/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://tanks/EnemyTank.tscn" type="PackedScene" id=5]
-[ext_resource path="res://tanks/GunTurret.tscn" type="PackedScene" id=6]
-[ext_resource path="res://environment/Obstacle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://bullets/Missile.tscn" type="PackedScene" id=6]
+[ext_resource path="res://tanks/GunTurret.tscn" type="PackedScene" id=7]
+[ext_resource path="res://environment/Obstacle.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -55,14 +56,15 @@ __meta__ = {
 
 [node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 1087.46, 475.679 )
+position = Vector2( 2420.48, 1359.13 )
+gun_shots = 1
+gun_spread = 0.2
 
 [node name="Paths" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="Path2D" type="Path2D" parent="Paths" index="0"]
 
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D" index="0"]
@@ -79,12 +81,16 @@ lookahead = 4.0
 
 [node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" index="0" instance=ExtResource( 5 )]
 
+Bullet = ExtResource( 6 )
 max_speed = 175
+gun_shots = 3
+gun_spread = 0.2
 turret_speed = 3.0
 detect_radius = 500
 
 [node name="Path2D2" type="Path2D" parent="Paths" index="1"]
 
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D2" index="0"]
@@ -103,205 +109,206 @@ lookahead = 4.0
 
 max_speed = 150
 rotation_speed = 0.0
+gun_shots = 1
+gun_spread = 0.2
 turret_speed = 3.0
 detect_radius = 450
 
-[node name="GunTurret" parent="." index="4" instance=ExtResource( 6 )]
+[node name="GunTurret" parent="." index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 2308.93, 396.547 )
+gun_shots = 1
+gun_spread = 0.2
 
 [node name="Obstacles" type="Node2D" parent="." index="5"]
 
-[node name="Obstacle" parent="Obstacles" index="0" instance=ExtResource( 7 )]
+[node name="Obstacle" parent="Obstacles" index="0" instance=ExtResource( 8 )]
 
 position = Vector2( 1469.08, 2014.04 )
 rotation = 1.01247
-type = 11
 
-[node name="Obstacle2" parent="Obstacles" index="1" instance=ExtResource( 7 )]
+[node name="Obstacle2" parent="Obstacles" index="1" instance=ExtResource( 8 )]
 
 position = Vector2( 1334.15, 1459.6 )
 rotation = 1.76009
 type = 18
 
-[node name="Obstacle16" parent="Obstacles" index="2" instance=ExtResource( 7 )]
+[node name="Obstacle16" parent="Obstacles" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( 2657.13, 618.974 )
 rotation = 1.76009
 type = 16
 
-[node name="Obstacle17" parent="Obstacles" index="3" instance=ExtResource( 7 )]
+[node name="Obstacle17" parent="Obstacles" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 267.352, 180.647 )
 rotation = 1.76009
 type = 18
 
-[node name="Obstacle19" parent="Obstacles" index="4" instance=ExtResource( 7 )]
+[node name="Obstacle19" parent="Obstacles" index="4" instance=ExtResource( 8 )]
 
 position = Vector2( 799.749, 364.784 )
 rotation = 1.76009
 type = 18
 
-[node name="Obstacle20" parent="Obstacles" index="5" instance=ExtResource( 7 )]
+[node name="Obstacle20" parent="Obstacles" index="5" instance=ExtResource( 8 )]
 
 position = Vector2( 2342.9, 1739.81 )
 rotation = 1.76009
 type = 18
 
-[node name="Obstacle21" parent="Obstacles" index="6" instance=ExtResource( 7 )]
+[node name="Obstacle21" parent="Obstacles" index="6" instance=ExtResource( 8 )]
 
 position = Vector2( 1850.53, 1739.81 )
 rotation = 1.76009
 type = 18
 
-[node name="Obstacle3" parent="Obstacles" index="7" instance=ExtResource( 7 )]
+[node name="Obstacle3" parent="Obstacles" index="7" instance=ExtResource( 8 )]
 
 position = Vector2( 580.091, 1102.2 )
 rotation = 1.27659
 type = 18
 
-[node name="Obstacle26" parent="Obstacles" index="8" instance=ExtResource( 7 )]
+[node name="Obstacle26" parent="Obstacles" index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 1806.03, 575.741 )
 rotation = 1.5573
 type = 19
 
-[node name="Obstacle4" parent="Obstacles" index="9" instance=ExtResource( 7 )]
+[node name="Obstacle4" parent="Obstacles" index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 677.189, 1100.13 )
 rotation = 1.5573
 type = 19
 
-[node name="Obstacle22" parent="Obstacles" index="10" instance=ExtResource( 7 )]
+[node name="Obstacle22" parent="Obstacles" index="10" instance=ExtResource( 8 )]
 
 position = Vector2( 525.076, 749.871 )
 rotation = 0.975411
 type = 19
 
-[node name="Obstacle23" parent="Obstacles" index="11" instance=ExtResource( 7 )]
+[node name="Obstacle23" parent="Obstacles" index="11" instance=ExtResource( 8 )]
 
 position = Vector2( 1970.15, 1754.62 )
 rotation = 1.5573
 type = 19
 
-[node name="Obstacle24" parent="Obstacles" index="12" instance=ExtResource( 7 )]
+[node name="Obstacle24" parent="Obstacles" index="12" instance=ExtResource( 8 )]
 
 position = Vector2( 348.944, 1040.09 )
 rotation = 1.5573
 type = 19
 
-[node name="Obstacle18" parent="Obstacles" index="13" instance=ExtResource( 7 )]
+[node name="Obstacle18" parent="Obstacles" index="13" instance=ExtResource( 8 )]
 
 position = Vector2( 1748.46, 642.992 )
 rotation = 1.49474
 type = 18
 
-[node name="Obstacle25" parent="Obstacles" index="14" instance=ExtResource( 7 )]
+[node name="Obstacle25" parent="Obstacles" index="14" instance=ExtResource( 8 )]
 
 position = Vector2( 2218.34, 1770.63 )
 rotation = 1.5573
 type = 19
 
-[node name="Obstacle5" parent="Obstacles" index="15" instance=ExtResource( 7 )]
+[node name="Obstacle5" parent="Obstacles" index="15" instance=ExtResource( 8 )]
 
 position = Vector2( 836.264, 833.63 )
 rotation = -0.0528345
-type = 11
 
-[node name="Obstacle27" parent="Obstacles" index="16" instance=ExtResource( 7 )]
+[node name="Obstacle27" parent="Obstacles" index="16" instance=ExtResource( 8 )]
 
 position = Vector2( 1468.74, 175.139 )
 rotation = -4.41323
 _sections_unfolded = [ "Transform" ]
 
-[node name="Obstacle6" parent="Obstacles" index="17" instance=ExtResource( 7 )]
+[node name="Obstacle6" parent="Obstacles" index="17" instance=ExtResource( 8 )]
 
 position = Vector2( 836.264, 969.98 )
 rotation = -3.08342
-type = 11
 
-[node name="Obstacle7" parent="Obstacles" index="18" instance=ExtResource( 7 )]
+[node name="Obstacle7" parent="Obstacles" index="18" instance=ExtResource( 8 )]
 
 position = Vector2( 1330.02, 1707.51 )
 rotation = -1.29562
 type = 9
 
-[node name="Obstacle8" parent="Obstacles" index="19" instance=ExtResource( 7 )]
+[node name="Obstacle8" parent="Obstacles" index="19" instance=ExtResource( 8 )]
 
 position = Vector2( 1195.73, 1688.92 )
 rotation = -1.29562
 type = 9
 
-[node name="Obstacle9" parent="Obstacles" index="20" instance=ExtResource( 7 )]
+[node name="Obstacle9" parent="Obstacles" index="20" instance=ExtResource( 8 )]
 
 position = Vector2( 815.605, 1062.95 )
 rotation = -1.91195
 type = 9
 
-[node name="Obstacle10" parent="Obstacles" index="21" instance=ExtResource( 7 )]
+[node name="Obstacle10" parent="Obstacles" index="21" instance=ExtResource( 8 )]
 
 position = Vector2( 1121.36, 1492.65 )
 rotation = -1.58741
 type = 9
 
-[node name="Obstacle11" parent="Obstacles" index="22" instance=ExtResource( 7 )]
+[node name="Obstacle11" parent="Obstacles" index="22" instance=ExtResource( 8 )]
 
 position = Vector2( 766.023, 1155.91 )
 rotation = -1.36243
 type = 9
 
-[node name="Obstacle12" parent="Obstacles" index="23" instance=ExtResource( 7 )]
+[node name="Obstacle12" parent="Obstacles" index="23" instance=ExtResource( 8 )]
 
 position = Vector2( 2247.28, 323.351 )
 rotation = 3.80558
 type = 12
 
-[node name="Obstacle13" parent="Obstacles" index="24" instance=ExtResource( 7 )]
+[node name="Obstacle13" parent="Obstacles" index="24" instance=ExtResource( 8 )]
 
 position = Vector2( 2222.92, 384.079 )
 rotation = 3.2132
 type = 12
 
-[node name="Obstacle14" parent="Obstacles" index="25" instance=ExtResource( 7 )]
+[node name="Obstacle14" parent="Obstacles" index="25" instance=ExtResource( 8 )]
 
 position = Vector2( 2244.87, 445.625 )
 rotation = 2.41829
 type = 12
 
-[node name="Obstacle15" parent="Obstacles" index="26" instance=ExtResource( 7 )]
+[node name="Obstacle15" parent="Obstacles" index="26" instance=ExtResource( 8 )]
 
 position = Vector2( 2303.56, 473.097 )
 rotation = 1.77306
 type = 12
 
-[node name="Obstacle28" parent="Obstacles" index="27" instance=ExtResource( 7 )]
+[node name="Obstacle28" parent="Obstacles" index="27" instance=ExtResource( 8 )]
 
 position = Vector2( 2407.08, 193.333 )
 type = 5
 
-[node name="Obstacle29" parent="Obstacles" index="28" instance=ExtResource( 7 )]
+[node name="Obstacle29" parent="Obstacles" index="28" instance=ExtResource( 8 )]
 
 position = Vector2( 2378.83, 148.504 )
 type = 5
 
-[node name="Obstacle30" parent="Obstacles" index="29" instance=ExtResource( 7 )]
+[node name="Obstacle30" parent="Obstacles" index="29" instance=ExtResource( 8 )]
 
 position = Vector2( 2428.12, 135.632 )
 type = 5
 
-[node name="Obstacle31" parent="Obstacles" index="30" instance=ExtResource( 7 )]
+[node name="Obstacle31" parent="Obstacles" index="30" instance=ExtResource( 8 )]
 
 position = Vector2( 2385.99, 91.1932 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 type = 4
 
-[node name="Obstacle33" parent="Obstacles" index="31" instance=ExtResource( 7 )]
+[node name="Obstacle33" parent="Obstacles" index="31" instance=ExtResource( 8 )]
 
 position = Vector2( 2444.41, 69.9053 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 type = 4
 
-[node name="Obstacle32" parent="Obstacles" index="32" instance=ExtResource( 7 )]
+[node name="Obstacle32" parent="Obstacles" index="32" instance=ExtResource( 8 )]
 
 position = Vector2( 2384.97, 49.2334 )
 _sections_unfolded = [ "Transform", "Z Index" ]

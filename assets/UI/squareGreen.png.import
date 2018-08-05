@@ -7,10 +7,7 @@ path="res://.import/squareGreen.png-1f160289e719939d212e07aa9a1e2905.stex"
 [deps]
 
 source_file="res://assets/UI/squareGreen.png"
-source_md5="36cb5d3bf5184bb1bec954b1a61ed277"
-
 dest_files=[ "res://.import/squareGreen.png-1f160289e719939d212e07aa9a1e2905.stex" ]
-dest_md5="339a141399d0a2d9318b176591f4bfbb"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/metalPanel_blueCorner.png-1aa627378b977ec7598b299b30ab4e06.s
 [deps]
 
 source_file="res://assets/UI/metalPanel_blueCorner.png"
-source_md5="d2d2d578ce25e4732c7816b75cc0756c"
-
 dest_files=[ "res://.import/metalPanel_blueCorner.png-1aa627378b977ec7598b299b30ab4e06.stex" ]
-dest_md5="30c8a825faf132514436179ba25271cd"
 
 [params]
 
