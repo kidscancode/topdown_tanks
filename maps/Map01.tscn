@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://bullets/Missile.tscn" type="PackedScene" id=6]
 [ext_resource path="res://tanks/GunTurret.tscn" type="PackedScene" id=7]
 [ext_resource path="res://environment/Obstacle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://items/Pickup.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -121,6 +122,8 @@ gun_shots = 1
 gun_spread = 0.2
 
 [node name="Obstacles" type="Node2D" parent="." index="5"]
+
+editor/display_folded = true
 
 [node name="Obstacle" parent="Obstacles" index="0" instance=ExtResource( 8 )]
 
@@ -313,6 +316,16 @@ type = 4
 position = Vector2( 2384.97, 49.2334 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 type = 6
+
+[node name="Items" type="Node2D" parent="." index="6"]
+
+[node name="Pickup" parent="Items" index="0" instance=ExtResource( 9 )]
+
+position = Vector2( 2696.59, 1366.65 )
+
+[node name="Pickup2" parent="Items" index="1" instance=ExtResource( 9 )]
+
+position = Vector2( 2537.49, 1858.24 )
 
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 
