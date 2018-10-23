@@ -21,6 +21,7 @@ max_speed = 200
 rotation_speed = 1.0
 gun_cooldown = 0.4
 max_health = 100
+ammo = 10
 
 [node name="Body" parent="." index="0"]
 
@@ -48,7 +49,7 @@ position = Vector2( 55, 0 )
 scale = Vector2( 1, 1 )
 offset = Vector2( 25, 0 )
 region_rect = Rect2( 584, 58, 57, 32 )
-_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="4"]
 

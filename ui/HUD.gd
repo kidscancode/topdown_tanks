@@ -6,7 +6,10 @@ var bar_yellow = preload("res://assets/UI/barHorizontal_yellow_mid 200.png")
 var bar_texture
 
 onready var HealthBarTween = $Margin/Container/HealthBar/Tween
-
+	
+func update_ammo(value):
+	$Margin/Container/AmmoGauge.value = value
+	
 func update_healthbar(value):
 	bar_texture = bar_green
 	if value < 60:

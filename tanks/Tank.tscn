@@ -66,6 +66,10 @@ max_speed = null
 rotation_speed = null
 gun_cooldown = null
 max_health = null
+gun_shots = 1
+gun_spread = 0.2
+max_ammo = 20
+ammo = -1
 
 [node name="Body" type="Sprite" parent="." index="0"]
 

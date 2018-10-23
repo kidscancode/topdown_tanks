@@ -58,8 +58,6 @@ __meta__ = {
 [node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 2420.48, 1359.13 )
-gun_shots = 1
-gun_spread = 0.2
 
 [node name="Paths" type="Node2D" parent="." index="3"]
 
@@ -85,7 +83,6 @@ lookahead = 4.0
 Bullet = ExtResource( 6 )
 max_speed = 175
 gun_shots = 3
-gun_spread = 0.2
 turret_speed = 3.0
 detect_radius = 500
 
@@ -110,16 +107,12 @@ lookahead = 4.0
 
 max_speed = 150
 rotation_speed = 0.0
-gun_shots = 1
-gun_spread = 0.2
 turret_speed = 3.0
 detect_radius = 450
 
 [node name="GunTurret" parent="." index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 2308.93, 396.547 )
-gun_shots = 1
-gun_spread = 0.2
 
 [node name="Obstacles" type="Node2D" parent="." index="5"]
 
@@ -322,10 +315,13 @@ type = 6
 [node name="Pickup" parent="Items" index="0" instance=ExtResource( 9 )]
 
 position = Vector2( 2696.59, 1366.65 )
+type = 1
 
 [node name="Pickup2" parent="Items" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( 2537.49, 1858.24 )
+
+[connection signal="ammo_changed" from="Player" to="HUD" method="update_ammo"]
 
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 
