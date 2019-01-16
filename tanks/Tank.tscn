@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tanks/Tank.gd" type="Script" id=1]
 [ext_resource path="res://assets/onlyObjects_retina_rotated.png" type="Texture" id=2]
-[ext_resource path="res://effects/Explosion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://effects/Smoke.tscn" type="PackedScene" id=3]
+[ext_resource path="res://effects/Explosion.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -61,11 +62,13 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 Bullet = null
 max_speed = null
 rotation_speed = null
 gun_cooldown = null
 max_health = null
+offroad_friction = 0.75
 gun_shots = 1
 gun_spread = 0.2
 max_ammo = 20
@@ -79,7 +82,13 @@ _sections_unfolded = [ "Region" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-[node name="Turret" type="Sprite" parent="." index="2"]
+[node name="Smoke" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -25, 0 )
+rotation = -3.14159
+draw_order = 1
+
+[node name="Turret" type="Sprite" parent="." index="3"]
 
 texture = ExtResource( 2 )
 region_enabled = true
@@ -95,14 +104,14 @@ texture = ExtResource( 2 )
 region_enabled = true
 _sections_unfolded = [ "Region", "Transform", "Visibility", "Z Index" ]
 
-[node name="GunTimer" type="Timer" parent="." index="3"]
+[node name="GunTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 
 root_node = NodePath("..")
 autoplay = "init"
@@ -113,7 +122,7 @@ anims/init = SubResource( 1 )
 anims/muzzle_flash = SubResource( 2 )
 blend_times = [  ]
 
-[node name="Explosion" parent="." index="5" instance=ExtResource( 3 )]
+[node name="Explosion" parent="." index="6" instance=ExtResource( 4 )]
 
 visible = false
 

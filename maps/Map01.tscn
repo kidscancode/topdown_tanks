@@ -57,7 +57,7 @@ __meta__ = {
 
 [node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 2420.48, 1359.13 )
+position = Vector2( 2445.23, 1352.53 )
 
 [node name="Paths" type="Node2D" parent="." index="3"]
 
@@ -80,6 +80,7 @@ lookahead = 4.0
 
 [node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" index="0" instance=ExtResource( 5 )]
 
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 Bullet = ExtResource( 6 )
 max_speed = 175
 gun_shots = 3
@@ -105,6 +106,7 @@ lookahead = 4.0
 
 [node name="EnemyTank" parent="Paths/Path2D2/PathFollow2D" index="0" instance=ExtResource( 5 )]
 
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 max_speed = 150
 rotation_speed = 0.0
 turret_speed = 3.0
@@ -113,6 +115,7 @@ detect_radius = 450
 [node name="GunTurret" parent="." index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 2308.93, 396.547 )
+offroad_friction = null
 
 [node name="Obstacles" type="Node2D" parent="." index="5"]
 

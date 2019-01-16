@@ -47,7 +47,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 55, 0 )
 offset = Vector2( 23, 0 )
 region_rect = Rect2( 644, 94, 50, 40 )
-_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="DetectRadius" type="Area2D" parent="." index="4"]
 

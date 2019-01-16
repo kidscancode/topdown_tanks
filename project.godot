@@ -13,6 +13,10 @@ config_version=3
 config/name="Top-down Tank Battle"
 config/icon="res://icon.png"
 
+[autoload]
+
+GLOBALS="*res://globals.gd"
+
 [display]
 
 window/stretch/mode="2d"
