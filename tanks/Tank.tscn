@@ -55,7 +55,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0.5, 0.5 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
 }
 
-[node name="Tank" type="KinematicBody2D"]
+[node name="Tank" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -86,6 +86,7 @@ _sections_unfolded = [ "Region" ]
 
 position = Vector2( -25, 0 )
 rotation = -3.14159
+emitting = false
 draw_order = 1
 
 [node name="Turret" type="Sprite" parent="." index="3"]
