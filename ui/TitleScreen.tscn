@@ -1,16 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://terrain/terrain_tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://assets/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://tanks/EnemyTank.tscn" type="PackedScene" id=3]
-[ext_resource path="res://environment/Obstacle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://terrain/terrain_tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://tanks/EnemyTank.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/Obstacle.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 96
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
@@ -18,7 +19,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 48
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="Animation" id=3]
@@ -71,13 +72,14 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 1 )
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
 modulate = Color( 0.761719, 0.761719, 0.761719, 1 )
 scale = Vector2( 0.5, 0.5 )
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 128, 128 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -101,8 +103,8 @@ anchor_left = 0.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -134.0
-margin_bottom = -18.0
+margin_top = -464.0
+margin_bottom = -348.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -122,6 +124,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="PlayMessage" type="Label" parent="." index="2"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -163,7 +166,7 @@ curve = SubResource( 4 )
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
 
 position = Vector2( -228.529, 98.8956 )
-rotation = -0.00303456
+rotation = -0.00303654
 scale = Vector2( 0.5, 0.5 )
 offset = 0.0
 h_offset = 0.0
@@ -174,65 +177,65 @@ loop = true
 lookahead = 4.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="EnemyTank" parent="Path2D/PathFollow2D" index="0" instance=ExtResource( 3 )]
+[node name="EnemyTank" parent="Path2D/PathFollow2D" index="0" instance=ExtResource( 4 )]
 
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 max_speed = 75
 
-[node name="Obstacle" parent="." index="5" instance=ExtResource( 4 )]
+[node name="Obstacle" parent="." index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 156.482, 507.511 )
 rotation = -0.967426
 
-[node name="Obstacle2" parent="." index="6" instance=ExtResource( 4 )]
+[node name="Obstacle2" parent="." index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 932.551, 414.467 )
 rotation = -3.6118
 type = 19
 
-[node name="Obstacle7" parent="." index="7" instance=ExtResource( 4 )]
+[node name="Obstacle7" parent="." index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 435.613, 593.153 )
 rotation = -3.6118
 type = 19
 
-[node name="Obstacle6" parent="." index="8" instance=ExtResource( 4 )]
+[node name="Obstacle6" parent="." index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 549.803, 559.319 )
 rotation = -2.7194
 type = 18
 
-[node name="Obstacle5" parent="." index="9" instance=ExtResource( 4 )]
+[node name="Obstacle5" parent="." index="9" instance=ExtResource( 5 )]
 
 position = Vector2( 1001.28, 383.805 )
 rotation = -3.6118
 type = 19
 
-[node name="Obstacle4" parent="." index="10" instance=ExtResource( 4 )]
+[node name="Obstacle4" parent="." index="10" instance=ExtResource( 5 )]
 
 position = Vector2( 939.952, 329.882 )
 rotation = -2.80657
 type = 19
 
-[node name="Obstacle3" parent="." index="11" instance=ExtResource( 4 )]
+[node name="Obstacle3" parent="." index="11" instance=ExtResource( 5 )]
 
 position = Vector2( 949.468, 107.846 )
 rotation = -2.80657
 type = 9
 
-[node name="Obstacle8" parent="." index="12" instance=ExtResource( 4 )]
+[node name="Obstacle8" parent="." index="12" instance=ExtResource( 5 )]
 
 position = Vector2( 79.9405, 190.386 )
 rotation = -1.56665
 type = 6
 
-[node name="Obstacle9" parent="." index="13" instance=ExtResource( 4 )]
+[node name="Obstacle9" parent="." index="13" instance=ExtResource( 5 )]
 
 position = Vector2( 29.6049, 163.884 )
 rotation = -1.84714
 type = 7
 
-[node name="Obstacle10" parent="." index="14" instance=ExtResource( 4 )]
+[node name="Obstacle10" parent="." index="14" instance=ExtResource( 5 )]
 
 position = Vector2( 29.0277, 213.416 )
 rotation = -1.84714
