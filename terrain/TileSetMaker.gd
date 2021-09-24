@@ -11,7 +11,13 @@ func _ready():
 		for y in range(tex_height):
 			var region = Rect2(x * tile_size.x, y * tile_size.y,
 							   tile_size.x, tile_size.y)
-			var id = x + y * 10
+			var ctx = HashingContext.new()
+			ctx.start(HashingContext.HASH_SHA256)
+			var pba = PoolByteArray([0,x,0,y])
+			ctx.update(pba)
+			var id = ctx.finish()
+			id = str(id.hex_encode())
+			id = hash(id)
 			ts.create_tile(id)
 			ts.tile_set_texture(id, texture)
 			ts.tile_set_region(id, region)
